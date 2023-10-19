@@ -1,0 +1,73 @@
+import { NgModule, LOCALE_ID } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import {
+  MatDialogModule,
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+} from '@angular/material/dialog';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
+import { HttpClientModule } from '@angular/common/http';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+
+import { UsuarioCadastrarComponent } from './main/usuario/usuario-cadastrar/usuario-cadastrar.component';
+import { UsuarioListarComponent } from './main/usuario/usuario-listar/usuario-listar.component';
+import { UsuarioRelatorioComponent } from './main/usuario/usuario-relatorio/usuario-relatorio.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    UsuarioListarComponent,
+    UsuarioCadastrarComponent,
+    UsuarioRelatorioComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    SweetAlert2Module.forRoot(),
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatButtonModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatCardModule,
+    ReactiveFormsModule,
+    FlexLayoutModule,
+    MatTableModule,
+    HttpClientModule,
+    MatInputModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatRadioModule,
+    MatSnackBarModule,
+    MatDialogModule,
+    MatTooltipModule,
+  ],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'pt-BR' },
+    { provide: MAT_DIALOG_DATA, useValue: {} },
+    { provide: MatDialogRef, useValue: {} },
+  ],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
